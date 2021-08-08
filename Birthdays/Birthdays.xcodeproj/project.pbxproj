@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F09667B626C03A9800146248 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09667B526C03A9800146248 /* Model.swift */; };
+		F09667B826C044B600146248 /* Date Extensions + Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09667B726C044B600146248 /* Date Extensions + Enum.swift */; };
 		F0F4A8E726BEB284006023B4 /* BirthdaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4A8E626BEB284006023B4 /* BirthdaysApp.swift */; };
 		F0F4A8E926BEB284006023B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4A8E826BEB284006023B4 /* ContentView.swift */; };
 		F0F4A8EB26BEB287006023B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0F4A8EA26BEB287006023B4 /* Assets.xcassets */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F09667B526C03A9800146248 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		F09667B726C044B600146248 /* Date Extensions + Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Extensions + Enum.swift"; sourceTree = "<group>"; };
 		F0F4A8E326BEB284006023B4 /* Birthdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birthdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0F4A8E626BEB284006023B4 /* BirthdaysApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaysApp.swift; sourceTree = "<group>"; };
 		F0F4A8E826BEB284006023B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				F0F4A90026BEDE7D006023B4 /* Person.swift */,
+				F09667B526C03A9800146248 /* Model.swift */,
+				F09667B726C044B600146248 /* Date Extensions + Enum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,12 +214,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0F4A90126BEDE7D006023B4 /* Person.swift in Sources */,
+				F09667B826C044B600146248 /* Date Extensions + Enum.swift in Sources */,
 				F0F4A90526BEDEEF006023B4 /* AddButton.swift in Sources */,
 				F0F4A90326BEDEB7006023B4 /* ImageButton.swift in Sources */,
 				F0F4A8E926BEB284006023B4 /* ContentView.swift in Sources */,
 				F0F4A8FE26BEDE13006023B4 /* ImagePicker.swift in Sources */,
 				F0F4A8E726BEB284006023B4 /* BirthdaysApp.swift in Sources */,
 				F0F4A8FA26BEDDCF006023B4 /* AddScreen.swift in Sources */,
+				F09667B626C03A9800146248 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

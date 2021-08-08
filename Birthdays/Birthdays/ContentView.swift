@@ -19,11 +19,37 @@ struct ContentView: View {
                     EmptyView()
                 }
                 
-                ForEach(persons) { person in
-                    PersonCell(person: person)
-                }.onDelete(perform: { indexSet in
-                    persons.remove(atOffsets: indexSet)
-                })
+                let data = Model.shared.getData(persons: persons, search: searchText)
+                
+                if data.past != nil {
+                    Section(header: Text("Прошедшие дни рождения")) {
+                        ForEach(data.past!) { person in
+                            PersonCell(person: person)
+                        }.onDelete(perform: { indexSet in
+                            persons.remove(atOffsets: indexSet)
+                        })
+                    }
+                }
+                
+                if data.today != nil {
+                    Section(header: Text("Cегодня")) {
+                        ForEach(data.today!) { person in
+                            PersonCell(person: person)
+                        }.onDelete(perform: { indexSet in
+                            persons.remove(atOffsets: indexSet)
+                        })
+                    }
+                }
+                
+                if data.future != nil {
+                    Section(header: Text("Ближайшие дни рождения")) {
+                        ForEach(data.future!) { person in
+                            PersonCell(person: person)
+                        }.onDelete(perform: { indexSet in
+                            persons.remove(atOffsets: indexSet)
+                        })
+                    }
+                }
             }.navigationBarTitle("Birthdays!")
             .navigationBarSearch(self.$searchText)
             .navigationBarItems(trailing: AddButton(persons: $persons))
