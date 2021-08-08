@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct PersonData {
+struct PersonData: Identifiable {
+    var id = UUID()
     var date = Date()
     var firstName: String
     var secondName: String

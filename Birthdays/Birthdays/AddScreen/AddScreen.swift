@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddScreen: View {
+    @Environment(\.presentationMode) var presentationMode
+    @Binding var persons: [PersonData]
     @State var person = PersonData(firstName: "", secondName: "", image: Image(systemName: "camera"))
     @State var galleryPresented = false
     @State var alertShowing = false
@@ -15,7 +17,6 @@ struct AddScreen: View {
     var body: some View {
         List {
             Section(header: Text("1. Укажите имя и фамилию")
-                        .font(.title2)
                         .fontWeight(.medium)) {
                 VStack(alignment: .leading) {
                     
@@ -31,8 +32,7 @@ struct AddScreen: View {
                 }.padding(.vertical, 10)
             }
             
-            Section(header:Text("2. Укажите дату рождения")
-                        .font(.title2)
+            Section(header: Text("2. Укажите дату рождения")
                         .fontWeight(.medium)) {
                 DatePicker("", selection: $person.date, in: PartialRangeThrough(Date()), displayedComponents: [.date])
                     .datePickerStyle(WheelDatePickerStyle())
@@ -40,7 +40,6 @@ struct AddScreen: View {
             }
             
             Section(header: Text("3. Добавьте фотографию")
-                        .font(.title2)
                         .fontWeight(.medium)) {
                 LazyVStack {
                     Button(action: {
@@ -54,7 +53,6 @@ struct AddScreen: View {
             }.padding(.vertical, 10)
             
             Section(header: Text("4. Сохраните")
-                        .font(.title2)
                         .fontWeight(.medium)) {
                 LazyVStack {
                     Button(action: {
@@ -88,13 +86,9 @@ struct AddScreen: View {
         if person.firstName.isEmpty || person.secondName.isEmpty {
             alertShowing = true
         } else {
-            print(person)
+            persons.append(person)
+            presentationMode.wrappedValue.dismiss()
         }
     }
 }
 
-struct AddScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        AddScreen()
-    }
-}
