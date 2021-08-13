@@ -12,20 +12,22 @@ enum DateType {
 }
 
 protocol DateManagerProtocol: AnyObject {
-    static func getType(person: PersonData) -> DateType
+    static func getType(day: Days) -> DateType
+    static func getDateString(date: Date) -> String
+    static func calculateAge(person: PersonData) -> Int
 }
 
 class DateManager: DateManagerProtocol {
-    static func getType(person: PersonData) -> DateType {
+    static func getType(day: Days) -> DateType {
         let now = Date().getDayAndMonth()
-        let personDate = person.date.getDayAndMonth()
+        let dayDate = day.date!.getDayAndMonth()
         
-        if now.month > personDate.month {
+        if now.month > dayDate.month {
             return .past
-        } else if now.month == personDate.month {
-            if now.day > personDate.day {
+        } else if now.month == dayDate.month {
+            if now.day > dayDate.day {
                 return .past
-            } else if now.day == personDate.day {
+            } else if now.day == dayDate.day {
                 return .today
             } else {
                 return .future
@@ -34,7 +36,21 @@ class DateManager: DateManagerProtocol {
             return .future
         }
     }
-
+    
+    static func getDateString(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMMM"
+        let dayString = formatter.string(from: date)
+        return dayString
+    }
+    
+    static func calculateAge(person: PersonData) -> Int {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "y"
+        let year = Int(formatter.string(from: Date()))! - Int(formatter.string(from: person.date))!
+        
+        return year
+    }
 }
 
 

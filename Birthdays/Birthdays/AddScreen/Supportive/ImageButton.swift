@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct ImageButtonView: View {
-    @Binding var image: Image
+    @Binding var image: UIImage
     
     var body: some View {
-            image
+            Image(uiImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .clipShape(Circle())

@@ -12,5 +12,5 @@ struct PersonData: Identifiable {
     var date = Date()
     var firstName: String
     var secondName: String
-    var image: Image
+    var image: UIImage
 }
