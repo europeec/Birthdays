@@ -9,7 +9,7 @@
 
 ---
 ### Скриншоты: 
-![Main Screen](screenshots/MainScreen.PNG "Main Screen")![Search](screenshots/Search.PNG "Search")![MainScreenWithoutSearch](screenshots/MainScreenWithoutSearch.PNG "Main Screen Without Search")![Adding](screenshots/Adding.PNG "Adding")
+![Main Screen](screenshots/MainScreen.PNG "Main Screen")![Search](screenshots/Search.PNG "Search")![MainScreenWithoutSearch](screenshots/MainScreenWithoutSearch.PNG "Main Screen Without Search")![Adding](screenshots/Adding.PNG "Adding")![Deleting](screenshots/Deleting.PNG "Deleting")
 
 
 
