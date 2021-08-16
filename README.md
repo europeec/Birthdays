@@ -7,12 +7,9 @@
 - Поиск в списке реализован с помощью [SwiftlySearch](https://github.com/thislooksfun/SwiftlySearch) (потому что писалось под iOS 14.5, для 15+ searchable)
 - Свайп влево для удаления 
 
-<details>
-  <summary>Скриншоты: </summary>
-  
-     ![Main Screen](screenshots/MainScreen.PNG "Main Screen")![Search](screenshots/Search.PNG "Search")![MainScreenWithoutSearch](screenshots/MainScreenWithoutSearch.PNG "Main Screen Without Search")![Adding](screenshots/Adding.PNG "Adding")
-    
-</details>
+---
+### Скриншоты: 
+![Main Screen](screenshots/MainScreen.PNG "Main Screen")![Search](screenshots/Search.PNG "Search")![MainScreenWithoutSearch](screenshots/MainScreenWithoutSearch.PNG "Main Screen Without Search")![Adding](screenshots/Adding.PNG "Adding")
 
 
 
