@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PersonData: Identifiable {
     var id = UUID()
-    var date = Date()
+    var date: Date
     var firstName: String
     var secondName: String
     var image: UIImage

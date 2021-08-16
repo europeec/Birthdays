@@ -80,14 +80,14 @@ class Model: ModelProtocol {
         guard let days = days else { return nil }
         var persons = [PersonData]()
         for day in days {
-            let person = PersonData(firstName: day.firstname!, secondName: day.secondname!, image: UIImage(data: day.image!)!)
+            let person = PersonData(date: day.date!, firstName: day.firstname!, secondName: day.secondname!, image: UIImage(data: day.image!)!)
             persons.append(person)
         }
         return persons
     }
     
     func convertDayToPerson(day: Days) -> PersonData {
-        let person = PersonData(firstName: day.firstname!, secondName: day.secondname!, image: UIImage(data: day.image!)!)
+        let person = PersonData(date: day.date!, firstName: day.firstname!, secondName: day.secondname!, image: UIImage(data: day.image!)!)
         return person
     }
     

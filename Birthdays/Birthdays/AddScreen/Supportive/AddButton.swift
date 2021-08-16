@@ -8,11 +8,9 @@
 import SwiftUI
 
 struct AddButton: View {
-    @Binding var data: [Days]?
-    
     var body: some View {
         NavigationLink(
-            destination: AddScreen(data: $data),
+            destination: AddScreen(),
             label: {
                 Image(systemName: "plus.circle")
                     .font(.title)

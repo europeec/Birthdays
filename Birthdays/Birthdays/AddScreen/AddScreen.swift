@@ -9,8 +9,7 @@ import SwiftUI
 
 struct AddScreen: View {
     @Environment(\.presentationMode) var presentationMode
-    @Binding var data: [Days]?
-    @State var person = PersonData(firstName: "", secondName: "", image: UIImage(systemName: "person.circle")!)
+    @State var person = PersonData(date: Date(), firstName: "", secondName: "", image: UIImage(systemName: "person.circle")!)
     @State var galleryPresented = false
     @State var alertShowing = false
     var model = Model.shared
@@ -88,7 +87,6 @@ struct AddScreen: View {
             alertShowing = true
         } else {
             let day = model.save(person: person)
-            data?.append(day)
             presentationMode.wrappedValue.dismiss()
         }
     }

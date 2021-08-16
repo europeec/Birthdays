@@ -6,27 +6,25 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MainScreenView: View {
-    @State var searchText = ""
+    @Environment(\.managedObjectContext) var managedObjectContext
     let model = Model.shared
-    @State var data: [Days]?
-    
-    init() {
-        self.data = model.days
-    }
+    @State var searchText = ""
+    @State var days: (past: [Days]?, today: [Days]?, future: [Days]?)
     
     var body: some View {
         NavigationView {
             List {
-                let days = model.getData(search: searchText)
-                                
                 if days.past != nil {
                     Section(header: Text("Прошедшие дни рождения")) {
                         ForEach(days.past!) { day in
                             PersonCellView(day: day)
                         }.onDelete(perform: { indexSet in
-                            
+                            let index = indexSet.first
+                            model.delete(days.past?[index!])
+                            updateData(searchText: searchText)
                         })
                     }
                 }
@@ -38,6 +36,7 @@ struct MainScreenView: View {
                         }.onDelete(perform: { indexSet in
                             let index = indexSet.first
                             model.delete(days.today?[index!])
+                            updateData(searchText: searchText)
                         })
                     }
                 }
@@ -47,14 +46,26 @@ struct MainScreenView: View {
                         ForEach(days.future!) { day in
                             PersonCellView(day: day)
                         }.onDelete(perform: { indexSet in
-                            
+                            let index = indexSet.first
+                            model.delete(days.future?[index!])
+                            updateData(searchText: searchText)
                         })
                     }
                 }
-            }.navigationBarTitle("Birthdays!")
+            }.onAppear {
+                self.updateData(searchText: searchText)
+            }
+            .onChange(of: searchText) { _ in
+                self.updateData(searchText: searchText)
+            }
+            .navigationBarTitle("Birthdays!")
             .navigationBarSearch(self.$searchText)
-            .navigationBarItems(trailing: AddButton(data: $data))
+            .navigationBarItems(trailing: AddButton().environment(\.managedObjectContext, self.managedObjectContext))
         }
+    }
+    
+    private func updateData(searchText: String) {
+        self.days = self.model.getData(search: searchText)
     }
 }
 
