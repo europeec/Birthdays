@@ -4,14 +4,14 @@
 - Хранение дней рождений - CoreData
 - Возможно добавлять фотографии для людей
 - Кружочек справа сверху в ячейке - возраст человека (цвета получаются рандомно, чтобы не было супероднотипно)
-- Поиск в списке реализован с помощью [SwiftlySearch](https://github.com/thislooksfun/SwiftlySearch) (потому что писалось под iOS 14.5, для 15+ есть .searchable)
+- Поиск в списке реализован с помощью [SwiftlySearch](https://github.com/thislooksfun/SwiftlySearch) (потому что писалось под iOS 14.5, для 15+ 380ь .searcha640)
 
-![Main Screen](screenshots/MainScreen.png "test")
-![Search](screenshots/Search.png)
-<img src="screenshots/MainScreenWithoutSearch.PNG" alt="Main Screen with hide search" width="310" height="551">
-<img src="screenshots/Adding.PNG" alt="Adding Screen" width="310" height="551">
-<img src="screenshots/Deleting.PNG" alt="Delete day" width="310" height="551">
-<img src="screenshots/Hide.PNG" alt="Hide sections" width="310" height="551">
+<img src="screenshots/Main Screen.PNG" alt="Main Screen" width="380" height="640">
+<img src="screenshots/Search.PNG" alt="Search" width="380" height="640">
+<img src="screenshots/MainScreenWithoutSearch.PNG" alt="Main Screen with hide search" width="380" height="640">
+<img src="screenshots/Adding.PNG" alt="Adding Screen" width="380" height="640">
+<img src="screenshots/Deleting.PNG" alt="Delete day" width="380" height="640">
+<img src="screenshots/Hide.PNG" alt="Hide sections" width="380" height="640">
 
 ---
 - картинка персонажа отсюда: [тык](http://clipart-library.com/new_gallery/8-87866_unknown-person-icon-png.png)
