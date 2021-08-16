@@ -2,9 +2,9 @@
 Приложение для отслеживания дней рождений. 
 
 - Хранение дней рождений - CoreData
-- Возможно добавлять фотографии для людей
+- Возможность добавлять фотографии для людей
 - Кружочек справа сверху в ячейке - возраст человека (цвета получаются рандомно, чтобы не было супероднотипно)
-- Поиск в списке реализован с помощью [SwiftlySearch](https://github.com/thislooksfun/SwiftlySearch) (потому что писалось под iOS 14.5, для 15+ 380ь .searcha640)
+- Поиск в списке реализован с помощью [SwiftlySearch](https://github.com/thislooksfun/SwiftlySearch) (потому что писалось под iOS 14.5, для 15+ searchable)
 
 ![Main Screen](screenshots/MainScreen.PNG "Main Screen")
 ![Search](screenshots/Search.PNG "Search"]
