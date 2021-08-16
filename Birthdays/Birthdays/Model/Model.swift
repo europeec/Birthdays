@@ -142,7 +142,14 @@ class Model: ModelProtocol {
         guard let search = search, !search.isEmpty else { return true }
         
         let lowerSearch = search.lowercased()
-        return day.firstname!.lowercased().contains(lowerSearch) || day.secondname!.lowercased().contains(lowerSearch)
+        let lowerFirst = day.firstname!.lowercased()
+        let lowerSecond = day.secondname!.lowercased()
+        let firstPlusSecond = lowerFirst + " " + lowerSecond
+        let secondPlusFirst = lowerSecond + " " + lowerFirst
+        return lowerFirst.contains(lowerSearch) ||
+            lowerSecond.contains(lowerSearch) ||
+            firstPlusSecond.contains(lowerSearch) ||
+            secondPlusFirst.contains(lowerSearch)
     }
 }
 
