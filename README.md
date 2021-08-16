@@ -6,7 +6,7 @@
 - Кружочек справа сверху в ячейке - возраст человека (цвета получаются рандомно, чтобы не было супероднотипно)
 - Поиск в списке реализован с помощью [SwiftlySearch](https://github.com/thislooksfun/SwiftlySearch) (потому что писалось под iOS 14.5, для 15+ есть .searchable)
 
-![Main Screen][screenshots/MainScreen.PNG "test"]
+![Main Screen](screenshots/MainScreen.PNG "test")
 ![Search](screenshots/Search.PNG)
 <img src="screenshots/MainScreenWithoutSearch.PNG" alt="Main Screen with hide search" width="310" height="551">
 <img src="screenshots/Adding.PNG" alt="Adding Screen" width="310" height="551">
