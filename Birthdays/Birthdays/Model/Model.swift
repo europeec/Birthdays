@@ -123,9 +123,8 @@ class Model: ModelProtocol {
         }
         
         // sorting
-        past?.sort(by: { $0.date! < $1.date! })
-        today?.sort(by: { $0.date! == $1.date! })
-        future?.sort(by: { $0.date! > $1.date! })
+        past?.sort(by: { DateManager.compare($0, with: $1) })
+        future?.sort(by: { !DateManager.compare($0, with: $1) })
         
         return (past: past, today: today, future: future)
     }

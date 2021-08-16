@@ -15,6 +15,7 @@ protocol DateManagerProtocol: AnyObject {
     static func getType(day: Days) -> DateType
     static func getDateString(date: Date) -> String
     static func calculateAge(person: PersonData) -> Int
+    static func compare(_ first: Days, with second: Days) -> Bool
 }
 
 class DateManager: DateManagerProtocol {
@@ -51,8 +52,20 @@ class DateManager: DateManagerProtocol {
         
         return year
     }
+    
+    static func compare(_ first: Days, with second: Days) -> Bool {
+        let firstComponents = first.date!.getDayAndMonth()
+        let secondComponents = second.date!.getDayAndMonth()
+        
+        if secondComponents.month > firstComponents.month {
+            return true
+        } else if firstComponents.month < secondComponents.month {
+            return false
+        } else {
+            return secondComponents.day > firstComponents.day
+        }
+    }
 }
-
 
 extension Date {
     func getDayAndMonth() -> (day: Int, month: Int) {

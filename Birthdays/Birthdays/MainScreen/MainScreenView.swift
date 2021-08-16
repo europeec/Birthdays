@@ -14,6 +14,10 @@ struct MainScreenView: View {
     @State var searchText = ""
     @State var days: (past: [Days]?, today: [Days]?, future: [Days]?)
     
+    init() {
+        days = model.getData(search: nil)
+    }
+    
     var body: some View {
         NavigationView {
             List {
