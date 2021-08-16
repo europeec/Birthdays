@@ -14,7 +14,7 @@ protocol ModelProtocol: AnyObject {
     func fetch() -> [Days]?
     func getData(search: String?) -> (past: [Days]?, today: [Days]?, future: [Days]?)
     func saveContext()
-    func save(person: PersonData) -> Days
+    func save(person: PersonData)
     func convertDaysToPersons(days: [Days]?) -> [PersonData]?
     func convertDayToPerson(day: Days) -> PersonData
     func delete(_ day: Days?)
@@ -48,14 +48,13 @@ class Model: ModelProtocol {
         return fetched
     }
     
-    func save(person: PersonData) -> Days {
+    func save(person: PersonData) {
         let new = Days(context: managedObjectContext)
         new.firstname = person.firstName
         new.secondname = person.secondName
         new.date = person.date
         new.image = person.image.pngData()
         self.saveContext()
-        return new
     }
     
     func saveContext () {
@@ -123,8 +122,8 @@ class Model: ModelProtocol {
         }
         
         // sorting
-        past?.sort(by: { DateManager.compare($0, with: $1) })
-        future?.sort(by: { !DateManager.compare($0, with: $1) })
+        past?.sort(by: { !DateManager.compare($0, with: $1) })
+        future?.sort(by: { DateManager.compare($1, with: $0) })
         
         return (past: past, today: today, future: future)
     }

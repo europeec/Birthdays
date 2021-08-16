@@ -17,7 +17,7 @@ struct MainScreenView: View {
     init() {
         days = model.getData(search: nil)
     }
-    
+
     var body: some View {
         NavigationView {
             List {

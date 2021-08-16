@@ -15,7 +15,7 @@ struct ImageButtonView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .clipShape(Circle())
-                .frame(width: 100)
+                .frame(width: 100, height: 100)
                 .overlay(
                     Circle()
                         .stroke()

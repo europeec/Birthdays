@@ -57,12 +57,12 @@ class DateManager: DateManagerProtocol {
         let firstComponents = first.date!.getDayAndMonth()
         let secondComponents = second.date!.getDayAndMonth()
         
-        if secondComponents.month > firstComponents.month {
+        if firstComponents.month > secondComponents.month {
             return true
         } else if firstComponents.month < secondComponents.month {
             return false
         } else {
-            return secondComponents.day > firstComponents.day
+            return firstComponents.day > secondComponents.day
         }
     }
 }

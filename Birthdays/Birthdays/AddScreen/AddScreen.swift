@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AddScreen: View {
     @Environment(\.presentationMode) var presentationMode
-    @State var person = PersonData(date: Date(), firstName: "", secondName: "", image: UIImage(systemName: "person.circle")!)
+    @State var person = PersonData(date: Date(), firstName: "", secondName: "", image: UIImage(named: "person")!)
     @State var galleryPresented = false
     @State var alertShowing = false
     var model = Model.shared
@@ -86,7 +86,7 @@ struct AddScreen: View {
         if person.firstName.isEmpty || person.secondName.isEmpty {
             alertShowing = true
         } else {
-            let day = model.save(person: person)
+            model.save(person: person)
             presentationMode.wrappedValue.dismiss()
         }
     }
