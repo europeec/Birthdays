@@ -10,8 +10,8 @@ import EventKit
 
 protocol EventProtocol: AnyObject {
     var eventStore: EKEventStore? { get set }
-    func addReminder(day: Days)
-    func addCalendar(days: [Days])
+    func addDay(day: Days)
+    func addDays()
     func removeCalendar()
     func getCalendar() -> EKCalendar?
 }
@@ -25,19 +25,13 @@ class EventManager: EventProtocol {
         self.eventStore = EKEventStore()
     }
     
-    func addReminder(day: Days) {
+    func addDay(day: Days) {
         guard let eventStore = eventStore else { return }
-        eventStore.requestAccess(to: .reminder) { [weak self] _, error in
+        eventStore.requestAccess(to: .event) { [weak self] _, error in
             if error == nil {
                 guard let self = self, let calendar = self.getCalendar() else { return }
-                let reminder = EKReminder(eventStore: eventStore)
                 let event = EKEvent(eventStore: eventStore)
                 event.title = day.firstname! + day.secondname!
-                reminder.priority = 9
-                reminder.startDateComponents = day.date?.startTimeComponents()
-                reminder.completionDate = day.date!.stopTime()
-                reminder.calendar = calendar
-                reminder.title = day.firstname! + day.secondname!
                 let startDate = day.date!.startTime()
                 let endDate = day.date!.stopTime()
                 event.startDate = startDate
@@ -47,17 +41,28 @@ class EventManager: EventProtocol {
                 event.alarms = nil
                 event.calendar = calendar
                 
-                try! eventStore.save(reminder, commit: true)
+                try! eventStore.save(event, span: .thisEvent)
             }
         }
     }
     
-    func addCalendar(days: [Days]) {
-        
+    func addDays() {
+        guard let days = Model.shared.days else { return }
+        for day in days {
+            addDay(day: day)
+        }
     }
     
     func removeCalendar() {
-        
+        guard let eventStore = eventStore else { return }
+        if let identifier = UserDefaults.standard.string(forKey: key),
+           let calendar = eventStore.calendar(withIdentifier: identifier) {
+            do {
+                try eventStore.removeCalendar(calendar, commit: true)
+            } catch let error {
+                print(error)
+            }
+        }
     }
     
     func getCalendar() -> EKCalendar? {
@@ -66,10 +71,10 @@ class EventManager: EventProtocol {
             return calendar
         } else {
             guard let eventStore = eventStore else { return nil }
-            let calendar = EKCalendar(for: .reminder, eventStore: eventStore)
+            let calendar = EKCalendar(for: .event, eventStore: eventStore)
             calendar.title = "Birthdays!"
             calendar.cgColor = UIColor.purple.cgColor
-            calendar.source = eventStore.defaultCalendarForNewReminders()?.source
+            calendar.source = eventStore.defaultCalendarForNewEvents?.source
             
             do {
                 try eventStore.saveCalendar(calendar, commit: true)

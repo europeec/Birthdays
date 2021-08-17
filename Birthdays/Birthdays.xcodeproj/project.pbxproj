@@ -14,6 +14,8 @@
 		F00B7EA626C5725200C98E39 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B7EA526C5725200C98E39 /* EmptyView.swift */; };
 		F00B7EDB26C575BE00C98E39 /* Days+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B7ED926C575BE00C98E39 /* Days+CoreDataClass.swift */; };
 		F00B7EDC26C575BE00C98E39 /* Days+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = F00B7EDA26C575BE00C98E39 /* Days+CoreDataProperties.swift */; };
+		F05ED70726CAD75100B41A7E /* EventManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ED70626CAD75100B41A7E /* EventManager.swift */; };
+		F05ED70926CAD7B100B41A7E /* SharingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F05ED70826CAD7B100B41A7E /* SharingManager.swift */; };
 		F09667B626C03A9800146248 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09667B526C03A9800146248 /* Model.swift */; };
 		F09667B826C044B600146248 /* Date Extensions + Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09667B726C044B600146248 /* Date Extensions + Enum.swift */; };
 		F0F4A8E726BEB284006023B4 /* BirthdaysApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F4A8E626BEB284006023B4 /* BirthdaysApp.swift */; };
@@ -36,6 +38,8 @@
 		F00B7ED726C5758700C98E39 /* ModelCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ModelCoreData.xcdatamodel; sourceTree = "<group>"; };
 		F00B7ED926C575BE00C98E39 /* Days+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F00B7EDA26C575BE00C98E39 /* Days+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Days+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		F05ED70626CAD75100B41A7E /* EventManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventManager.swift; sourceTree = "<group>"; };
+		F05ED70826CAD7B100B41A7E /* SharingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingManager.swift; sourceTree = "<group>"; };
 		F09667B526C03A9800146248 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		F09667B726C044B600146248 /* Date Extensions + Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date Extensions + Enum.swift"; sourceTree = "<group>"; };
 		F0F4A8E326BEB284006023B4 /* Birthdays.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Birthdays.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +135,8 @@
 				F0F4A90026BEDE7D006023B4 /* Person.swift */,
 				F09667B526C03A9800146248 /* Model.swift */,
 				F09667B726C044B600146248 /* Date Extensions + Enum.swift */,
+				F05ED70626CAD75100B41A7E /* EventManager.swift */,
+				F05ED70826CAD7B100B41A7E /* SharingManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 			files = (
 				F00B7EA226C571A400C98E39 /* PersonCellView.swift in Sources */,
 				F00B7EA626C5725200C98E39 /* EmptyView.swift in Sources */,
+				F05ED70926CAD7B100B41A7E /* SharingManager.swift in Sources */,
 				F0F4A90126BEDE7D006023B4 /* Person.swift in Sources */,
 				F00B7EDC26C575BE00C98E39 /* Days+CoreDataProperties.swift in Sources */,
 				F00B7E9F26C5713F00C98E39 /* MainScreenView.swift in Sources */,
@@ -253,6 +260,7 @@
 				F0F4A90326BEDEB7006023B4 /* ImageButton.swift in Sources */,
 				F00B7EDB26C575BE00C98E39 /* Days+CoreDataClass.swift in Sources */,
 				F0F4A8E926BEB284006023B4 /* ContentView.swift in Sources */,
+				F05ED70726CAD75100B41A7E /* EventManager.swift in Sources */,
 				F0F4A8FE26BEDE13006023B4 /* ImagePicker.swift in Sources */,
 				F0F4A8E726BEB284006023B4 /* BirthdaysApp.swift in Sources */,
 				F0F4A8FA26BEDDCF006023B4 /* AddScreen.swift in Sources */,

@@ -73,4 +73,40 @@ extension Date {
         let components = calendar.dateComponents([.day, .month], from: self)
         return (day: components.day!, month: components.month!)
     }
+    
+    func startTime() -> Date {
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.day, .month], from: self)
+        let nowYear = calendar.dateComponents([.year], from: Date())
+        components.hour = 0
+        components.minute = 0
+        components.second = 0
+        components.year = nowYear.year
+        
+        return calendar.date(from: components) ?? self
+    }
+    
+    func stopTime() -> Date {
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.day, .month], from: self)
+        let nowYear = calendar.dateComponents([.year], from: Date())
+        components.hour = 23
+        components.minute = 59
+        components.second = 59
+        components.year = nowYear.year
+
+        return calendar.date(from: components) ?? self
+    }
+    
+    func startTimeComponents() -> DateComponents {
+        let calendar = Calendar.current
+        var components = calendar.dateComponents([.day, .month], from: self)
+        let nowYear = calendar.dateComponents([.year], from: Date())
+        components.hour = 0
+        components.minute = 0
+        components.second = 0
+        components.year = nowYear.year
+        
+        return components
+    }
 }

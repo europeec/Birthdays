@@ -27,9 +27,11 @@ struct MainScreenView: View {
                             PersonCellView(day: day)
                         }.onDelete(perform: { indexSet in
                             let index = indexSet.first
-                            model.delete(days.past?[index!])
-                            updateData(searchText: searchText)
+                            EventManager.shared.removeCalendar()
+//                            model.delete(days.past?[index!])
+//                            updateData(searchText: searchText)
                         })
+            
                     }
                 }
                 
@@ -51,8 +53,9 @@ struct MainScreenView: View {
                             PersonCellView(day: day)
                         }.onDelete(perform: { indexSet in
                             let index = indexSet.first
-                            model.delete(days.future?[index!])
-                            updateData(searchText: searchText)
+                            EventManager.shared.addDay(day: days.future![index!])
+//                            model.delete(days.future?[index!])
+//                            updateData(searchText: searchText)
                         })
                     }
                 }

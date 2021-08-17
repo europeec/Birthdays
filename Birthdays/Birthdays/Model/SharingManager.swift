@@ -6,3 +6,6 @@
 //
 
 import Foundation
+
+// https://stackoverflow.com/questions/35931946/basic-example-for-sharing-text-or-image-with-uiactivityviewcontroller-in-swift
+// activity view controller
