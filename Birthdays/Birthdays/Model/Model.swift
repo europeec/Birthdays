@@ -151,3 +151,30 @@ class Model: ModelProtocol {
     }
 }
 
+extension PersonData {
+    func getMessage() -> String {
+        let date = self.date.getDayAndMonth()
+        let now = Date().getDayAndMonth()
+        var message: String!
+        let ageInt = DateManager.calculateAge(person: self)
+        let age = ageInt > 0 ? String(ageInt) : ""
+        let fullname = "\(self.firstName) \(self.secondName)"
+        
+        if date.month < now.month {
+            message = "\(DateManager.getDateString(date: self.date)) \(fullname) праздновал(а) \(age)!"
+        } else if date.month > now.month {
+            message = "\(DateManager.getDateString(date: self.date)) \(fullname) будет праздновать \(age)!"
+        } else {
+            if date.day ==  now.day {
+                message = "Сегодня \(self.firstName) \(self.secondName) \(fullname) празднует \(age)"
+            } else if date.day > now.day {
+                message = "\(DateManager.getDateString(date: self.date)) \(fullname) будет праздновать \(age)!"
+            } else {
+                message = "\(DateManager.getDateString(date: self.date)) \(fullname) праздновал(а) \(age)!"
+            }
+        }
+        
+        return message
+    }
+}
+

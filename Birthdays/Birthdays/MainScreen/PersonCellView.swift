@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PersonCellView: View {
+    @State var isSharePresented = false
     var day: Days
     
     var body: some View {
@@ -46,7 +47,12 @@ struct PersonCellView: View {
             Button("Добавить в календарь", action: {
                 EventManager.shared.addDay(day: day)
             })
-            Button("Поделиться", action: { print("share")} )
+            Button("Поделиться", action: {
+                isSharePresented = true
+            })
         }
+        .sheet(isPresented: $isSharePresented, content: {
+                ActivityController(sharingMessage: person.getMessage())
+               })
     }
 }
