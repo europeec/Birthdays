@@ -75,7 +75,6 @@ class EventManager: EventProtocol {
             calendar.title = "Birthdays!"
             calendar.cgColor = UIColor.purple.cgColor
             calendar.source = eventStore.defaultCalendarForNewEvents?.source
-            
             do {
                 try eventStore.saveCalendar(calendar, commit: true)
                 UserDefaults.standard.setValue(calendar.calendarIdentifier, forKey: key)

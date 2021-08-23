@@ -42,7 +42,11 @@ struct PersonCellView: View {
             
             let age = DateManager.calculateAge(person: person)
             CircleYearView(age: age)
+        }.contextMenu {
+            Button("Добавить в календарь", action: {
+                EventManager.shared.addDay(day: day)
+            })
+            Button("Поделиться", action: { print("share")} )
         }
     }
 }
-
