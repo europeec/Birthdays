@@ -31,13 +31,12 @@ class EventManager: EventProtocol {
             if error == nil {
                 guard let self = self, let calendar = self.getCalendar() else { return }
                 let event = EKEvent(eventStore: eventStore)
-                event.title = day.firstname! + day.secondname!
+                event.title = day.getMessageForEvent()
                 let startDate = day.date!.startTime()
                 let endDate = day.date!.stopTime()
                 event.startDate = startDate
                 event.endDate = endDate
                 event.isAllDay = true
-                event.notes = "..."
                 event.alarms = nil
                 event.calendar = calendar
                 

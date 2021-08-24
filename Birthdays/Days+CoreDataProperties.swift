@@ -26,3 +26,9 @@ extension Days {
 extension Days: Identifiable {
 
 }
+
+extension Days {
+    func getMessageForEvent() -> String {
+        return "День рождение! \(firstname) \(secondname)"
+    }
+}
