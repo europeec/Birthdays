@@ -9,7 +9,7 @@
 
 ---
 ### Скриншоты: 
-![Main Screen](screenshots/MainScreen.PNG "Main Screen")![MainScreenWithoutSearch](screenshots/MainScreenWithoutSearch.PNG "Main Screen Without Search")![Search](screenshots/Search.PNG "Search")![Adding](screenshots/Adding.PNG "Adding")![Deleting](screenshots/Deleting.PNG "Deleting")![Sharing](screenshots/sharing.png "sharing")![Calendars](screenshots/Calendars.png "Calendars")![Context Menu](screenshots/contextMenu.png "Context Menu")
+![Main Screen](screenshots/MainScreen.PNG "Main Screen")![MainScreenWithoutSearch](screenshots/MainScreenWithoutSearch.PNG "Main Screen Without Search")![Search](screenshots/Search.PNG "Search")![Adding](screenshots/Adding.PNG "Adding")![Deleting](screenshots/Deleting.PNG "Deleting")![Sharing](screenshots/sharing.png "sharing")![Calendars](screenshots/сalendars.png "Calendars")![Context Menu](screenshots/contextMenu.png "Context Menu")
 
 
 ---
