@@ -7,7 +7,7 @@
 - Поиск в списке реализован с помощью [SwiftlySearch](https://github.com/thislooksfun/SwiftlySearch) (потому что писалось под iOS 14.5, для 15+ searchable)
 - Свайп влево для удаления 
 - Добавление дней рождений в календарь - EKEvent
-- Возможность поделиться днем рождение - ActivityController
+- Возможность поделиться днем рождения - ActivityController
 
 ---
 ### Скриншоты: 
